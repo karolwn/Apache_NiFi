@@ -8,7 +8,7 @@ This git repository is a supplement to my BCs Thesis. It contains python scripts
 * dump_processing_times.py - extract mean processing times from the results and  convert to pickle object
 * make_final_plots_and_tables.py -  visualize data stored in pickle objects
 * make_summary_plot.py - plot processing and mean times in function of node numbers
-### requirements, in brackets ,versions of external modules used by me, python 3.8:
+### requirements, in brackets, versions of external modules used by me, python 3.8:
 * numpy (1.18.5)
 * pickle
 * time
