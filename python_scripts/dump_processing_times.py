@@ -25,15 +25,13 @@ def load_data_from_files():
                     try:
                         proc_times.append(float(col['procTime']))
                     except ValueError as e:
-                        # print(str(e))
-                        pass
+                        print(str(e))
                     except TypeError as e:
-                        # print(str(e))
-                        pass
+                        print(str(e))
                     except OSError as e:
-                        pass
+                        print(str(e))
                     except FileNotFoundError as e:
-                        pass
+                        print(str(e))
             except csv.Error as e:
                 print(str(e))
             f.close()
