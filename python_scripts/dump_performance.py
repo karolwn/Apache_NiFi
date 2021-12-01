@@ -1,5 +1,4 @@
 import csv
-import numpy as np
 import pickle
 
 
@@ -46,6 +45,6 @@ if __name__ == '__main__':
             result = main(file)
             out_files.append(result)
 
-    tmp = open('<output dump path>/node_5_1', 'wb')
+    tmp = open('<output file pathc>', 'wb')
     pickle.dump(out_files, tmp)
     tmp.close()
