@@ -18,7 +18,10 @@ This git repository is a supplement to my BCs Thesis. It contains python scripts
 * itertools
 * csv
 
-
 ## NiFi_configuration
 
-It contains nifi.properties, authorizers.xml, zookeeper.properties and state-management.xml which are described in the thesis.
+It contains nifi.properties, authorizers.xml, zookeeper.properties and state-management.xml which are described in the thesis. 
+
+## NiFi_detail_images
+
+Images of the data processing flow in detailImages are ordered by their position in the flow.
