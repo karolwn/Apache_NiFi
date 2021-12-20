@@ -1,9 +1,12 @@
+import matplotlib.pyplot as plt
 import csv
+import numpy as np
 import pickle
 
+plt.rcParams['figure.figsize'] = (12, 8)
 
 def main(i):
-    filename = open("<path to performance rports>/performance_node{}.csv".format(i), "r")
+    filename = open("input_files/1_nodes/performance_node{}.csv".format(i), "r") # specify input directory
     file = csv.DictReader(filename)
     cpu_user = []
     cpu_system = []
@@ -24,7 +27,7 @@ def main(i):
         load_avg_15m.append(float(col['XV_min']))
     filename.close()
 
-    final_mem_used = [used / (1024 * 1024) for used in mem_used] # memory in MB
+    final_mem_used = [used / (1024 * 1024) for used in mem_used] # memory conversion B --> MB
 
     final_obj.append(cpu_user)
     final_obj.append(cpu_system)
@@ -41,10 +44,10 @@ if __name__ == '__main__':
 
     out_files = []
     for file in range(1, 6):
-        if file not in (2, 4): # exclude certain nodes (e.g. nodes weren't part of cluster)
+        if file not in (2,3,4,5,6, 7):
             result = main(file)
             out_files.append(result)
 
-    tmp = open('<output file pathc>', 'wb')
+    tmp = open('./input_files_perf_unopt/node_1_8', 'wb') # specify output file
     pickle.dump(out_files, tmp)
     tmp.close()
