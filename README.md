@@ -1,6 +1,6 @@
 # Data processing and distribution system  based on Apache NiFi
 
-This git repository is a supplement to my BCs Thesis. It contains python scripts that I have used to obtain, process and visualize performance data. They are located in the python_scripts folder. As for the second one, it contains NiFi configuration files. NiFi_detail_images keeps detail images depicting the data flow.
+This git repository is a supplement to my BSc Thesis. It contains python scripts that I have used to obtain, process and visualize performance data. They are located in the python_scripts folder. As for the second one, it contains NiFi configuration files. NiFi_detail_images keeps detail images depicting the data flow.
 
 ## python_scripts
 * performance.py - gather system utilization info and save it into .csv file
