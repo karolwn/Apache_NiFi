@@ -44,7 +44,8 @@ if __name__ == '__main__':
 
     out_files = []
     for file in range(1, 6):
-        if file not in (2,3,4,5,6, 7):
+        # exclude non-existing files, for example in 3 nodes scenario files from nodes 4, and 5 does not exist
+        if file not in (2,3,4,5,6):
             result = main(file)
             out_files.append(result)
 

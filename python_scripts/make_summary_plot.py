@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
-import math
 import numpy as np
-
-import scipy.optimize
 
 
 def main():
+    # plt.rcParams.update({'font.size': 17})
+    plt.rcParams.update({'figure.dpi': 200})
+    # obtained results, rows - nodes, columns - iternations
     proc_times = [
         [110, 107, 118, 111, 111, 88, 94, 93]
         , [45, 47, 46, 47, 45, 50, 49, 50]
@@ -29,33 +29,32 @@ def main():
 
     node_no = np.array([1, 2, 3, 4, 5])
 
-    plt.plot(node_no, proc_times, 'o', color='green')
-    plt.plot(node_no, proc_times_2, 'o', color='red')
+    plt.plot(node_no, proc_times, 'P', color='black')
+    plt.plot(node_no, proc_times_2, '^', color='black')
     plt.grid()
-    plt.xlabel('Liczba węzłów w klastrze.')
-    plt.ylabel('Czas przetwarzania [min].')
-    plt.legend(['konfiguracja zoptymalizowana', 'konfiguracja domyślna'])
+    plt.xlabel('Number of nodes in cluster.')
+    plt.ylabel('Processing time [min].')
+    plt.legend(['optimised', 'default'])
     min_ylim, max_ylim = plt.ylim()
     print(range(0, int(max_ylim) + 10, 10))
     plt.yticks(range(0, int(max_ylim) + 10, 10))
     plt.xticks(range(0, 7, 1))
 
-    plt.savefig('./images/final/summary_plot_total_time.png')
+    plt.savefig('./images/final/summary_plot_total_time.svg', format="svg")
 
     plt.show()
 
-
-    plt.plot(node_no, file_delay, 'o', color='green')
-    plt.plot(node_no, file_delay_unopt, 'o', color='red')
+    plt.plot(node_no, file_delay, 'P', color='black')
+    plt.plot(node_no, file_delay_unopt, '^', color='black')
 
     plt.grid(which='minor', axis='both')
     plt.grid()
-    plt.xlabel('Liczba węzłów w klastrze.')
-    plt.ylabel('Czas [s].')
-    plt.legend(['konfiguracja zoptymalizowana', 'konfiguracja domyślna'])
+    plt.xlabel('Number of nodes in cluster.')
+    plt.ylabel('Time [s].')
+    plt.legend(['optimised', 'default'])
     plt.yscale('log')
     plt.xticks(range(0, 7, 1))
-    plt.savefig('./images/final/summary_plot_mean_proc.png')
+    plt.savefig('./images/final/summary_plot_mean_proc.svg', format="svg")
     plt.show()
 
 
